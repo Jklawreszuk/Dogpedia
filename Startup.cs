@@ -54,7 +54,7 @@ namespace Dogpedia
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Dog}/{action=Index}/{id?}");
             });
         }
     }

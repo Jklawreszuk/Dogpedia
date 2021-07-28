@@ -17,12 +17,7 @@ namespace Dogpedia.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        [Route("/Privacy")]
         public IActionResult Privacy()
         {
             return View();
