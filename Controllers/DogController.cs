@@ -53,7 +53,7 @@ namespace Dogpedia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Description,Name,Lifespan,Price,Weight,CountryOfOrigin")] Dog dog)
+        public async Task<IActionResult> Create([Bind] Dog dog)
         {
             if (ModelState.IsValid)
             {

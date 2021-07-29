@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,6 +19,8 @@ namespace Dogpedia
         public float Weight { get; set; }
         [StringLength(60),DisplayName("Kraj pochodzenia")]
         public string CountryOfOrigin { get; set; }
+        [DisplayName("Data publikacji")]
+        public DateTime Date { get; set; }
 
     }
 }
