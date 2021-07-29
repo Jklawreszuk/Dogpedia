@@ -1,4 +1,5 @@
-@model IEnumerable<Dogpedia.Dog>
+@model IEnumerable<Dog>
+@using Humanizer
 @{
     ViewData["Title"] = "Artykuły";
 }
@@ -8,14 +9,17 @@
 <p>
     <a asp-action="Create">Dodaj nowy artykuł</a>
 </p>
+@if(Model?.Count()>0)
+{
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Name)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Lifespan)
@@ -35,11 +39,12 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @item.Description.Truncate(14)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Lifespan)
@@ -62,3 +67,4 @@
 }
     </tbody>
 </table>
+}
