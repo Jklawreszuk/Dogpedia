@@ -6,55 +6,69 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6">
-        <h1>Stwórz artykuł</h1>
 
-        <h4>Informacje o psie</h4>
+
+        <div class="row">
+
+            <div class="col">
+                <h1>Stwórz artykuł </h1>
+                <h4>Informacje o psie</h4>
+            </div>
+            <div class="col-auto">
+                <a class="back-button" asp-action="Index"><i class="bi bi-arrow-left-circle"></i>Powrót</a>
+            </div>
+
+
+        </div>
         <hr />
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="Name" class="form-control name" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control desc"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Lifespan" class="control-label"></label>
-                <div class="k-container">
-                    <input asp-for="Lifespan" class="form-control lifespan" />
-                </div>
-                <span asp-validation-for="Lifespan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Price" class="form-control price" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Weight" class="form-control weight" />
-                <span asp-validation-for="Weight" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="CountryOfOrigin" class="form-control corigin" />
-                <span asp-validation-for="CountryOfOrigin" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="hidden" asp-for="Date" class="date" value=@DateTime.Now />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Stwórz" class="btn btn-primary btn-lg btn-block" />
-            </div>
+        <div class="row">
+            <div class="col">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="Name" class="form-control name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control desc"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
 
-        </form>
+                    <div class="form-group">
+                        <label asp-for="Lifespan" class="control-label"></label>
+                        <div class="k-container">
+                            <input asp-for="Lifespan" class="form-control lifespan" />
+                        </div>
+                        <span asp-validation-for="Lifespan" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Price" class="form-control price" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Weight" class="form-control weight" />
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="CountryOfOrigin" class="form-control corigin" />
+                        <span asp-validation-for="CountryOfOrigin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Date" class="date" value=@DateTime.Now />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Stwórz" class="btn btn-primary btn-lg btn-block" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Powrót</a>
-</div>
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

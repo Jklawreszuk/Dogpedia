@@ -23,7 +23,8 @@ function input(Name, Type, ContentArr) {
                     min: ContentArr[0],
                     max: ContentArr[1],
                     smallStep: 1,
-                    largeStep: 3
+                    largeStep: 3,
+                    tickPlacement: "none"
                 };
                 break;
             default:
